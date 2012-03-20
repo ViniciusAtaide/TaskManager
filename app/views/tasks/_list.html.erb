@@ -1,0 +1,17 @@
+<%= form_tag done_delete_tasks_path, :method => :put do  %>
+<div id="task_list">
+  <% @tasks.each do |task| %>
+  <li id="task">
+  <% if task.done == false %>
+    <%= check_box_tag "tasks_id[]", task.id, task.done %>  <%= task.name %> 
+  <% else %>
+    <%= check_box_tag "tasks_id[]", task.id, task.done, :disabled => true %>  <%= task.name + "(done)" %> 
+  <% end %>
+  </li>
+  <% end %>
+  <%= submit_tag "Mark selected as done" %>
+  <%= submit_tag "Delete selected" %>
+  
+</div>
+<% end %>
+  
