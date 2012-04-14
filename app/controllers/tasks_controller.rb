@@ -28,7 +28,8 @@ class TasksController < ApplicationController
       Task.update_all(["done=?", "true"], :id => params[:tasks_id])
       redirect_to tasks_path
     elsif params[:commit] == "Delete selected"
-      Task.delete_all(:id => params[:tasks_id])  
+      Task.delete_all(:id => params[:tasks_id])
+      Task.delete_all(["done=?", "true"])
       redirect_to tasks_path
     end
   end
