@@ -14,3 +14,6 @@
 li {
 	list-style-type:none;
 }
+#outer {
+	text-align: middle;
+}
