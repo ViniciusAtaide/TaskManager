@@ -1,5 +1,4 @@
-<%= form_tag done_delete_tasks_path, :method => :put do  %>
-<div id="task_list">
+<%= form_tag done_delete_tasks_path, :method => :put, :remote => true do  %>
   <% @tasks.each do |task| %>
   <li id="task">
   <% if task.done == false %>
@@ -11,7 +10,4 @@
   <% end %>
   <%= submit_tag "Mark selected as done" %>
   <%= submit_tag "Delete selected" %>
-  
-</div>
 <% end %>
-  

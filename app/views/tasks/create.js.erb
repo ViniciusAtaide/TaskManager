@@ -1,0 +1,4 @@
+$(":input:not(input[type=submit])").val("Enter your task here");
+$("#flash_notice").html("<%= escape_javascript(flash[:notice]) %>");
+$("#task_list").html("<%= escape_javascript(render :partial => 'list') %>");
+$("#task_form").html("<%= escape_javascript(render :partial => 'form') %>");

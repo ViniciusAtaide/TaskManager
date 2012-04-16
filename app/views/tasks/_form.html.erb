@@ -1,11 +1,4 @@
-<%= form_for @task do |f| %>
-<div id="flash_notice">
-  <% if @task.errors.any? %>
-      <% @task.errors.full_messages.each do |msg| %>      
-        <%= msg %>
-      <% end %>
-  <% end %>
-</div>
+<%= form_for @task, :remote => true do |f| %>
 <div id="task_new">
   <p>
     <%= f.text_field :name, :value => "Enter your task here", :size => 19 %>
